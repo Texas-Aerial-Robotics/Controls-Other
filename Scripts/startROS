@@ -1,0 +1,6 @@
+#!/bin/bash 
+cd /home/ubuntu/catkin_ws/src/Controls-ROS && git pull && cd src && catkin build &&
+roscore & 
+sleep 3
+roslaunch mavros apm.launch fcu_url:="/dev/ttyS0:921600" &
+sleep 3
