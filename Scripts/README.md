@@ -1,7 +1,29 @@
-This folder contains scripts related to logging data
+## This folder contains scripts that are helpful for Controls team: 
 
-pushLogs - This script automatically backs up logs to github
-SETUP: log must be in a git folder with ssh. Make sure the logDir 
-variable is pathed to the correct directory. All logs to be 
-pushed must begin with "log"
+### JetsonHealth.sh 
+- Logs temperature using `temp` script from below 
+- Also logs how much CPU and Mem we're using 
+- Useful for seeing how hard we're running the Jetsons 
 
+### pushLogs 
+- This script automatically backs up logs to github
+- SETUP: log must be in a git folder with ssh. Make sure the logDir variable is pathed to the correct directory. All logs to be pushed must begin with "log"
+
+### startROS 
+- Builds and starts our ROS package on the Jetson 
+- `startup.sh` is probably a better implementation 
+
+### startsim.sh 
+- Runs the two simulator start commands 
+
+### startup.sh 
+- Starts the required tools (`roscore` and `roslaunch`) for running our flight code 
+- Starts up our flight package 
+
+### temp 
+- Shows the temperature of the CPU in Celcius and Farenheit 
+- Useful for seeing how hard we're running the Jetsons 
+
+### timesync.bat 
+- Basically just restarts the Windows timekeeping service twice and asks to resync from Internet Time. This is used to keep clocks happy when dualbooting Windows and Linux. **You must have internet access before running this script.** 
+- I had this script in my startup folder `C:\Users\**Username**\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup` (easily accessible by opening "Run" and typing `shell:startup`). Then I had a shortcut to the script on my Desktop in case my internet didn't connect in time and I needed to run it again. 

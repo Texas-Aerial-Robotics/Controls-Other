@@ -1,0 +1,1 @@
+@echo off && net start w32time && w32tm /resync /nowait && C:\Windows\System32\w32tm.exe /resync && net start w32time && w32tm /resync /nowait && C:\Windows\System32\w32tm.exe /resync 
