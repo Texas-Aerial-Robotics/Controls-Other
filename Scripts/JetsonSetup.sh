@@ -9,6 +9,7 @@ set -e
 set -x
 
 export TELEM_SERIAL_PORT=/dev/ttyS0
+chmod 666 /dev/ttyS0
 
 # avahi-daemon for "ssh apsync" over WiFi
 
