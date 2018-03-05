@@ -15,7 +15,7 @@ chmod 666 /dev/ttyS0
 
 # Mess with packages 
 apt-get update
-apt-get purge -y whoopsie cups bluez modemmanager unattended-upgrades deja-dup libreoffice-* gnome-mines gnome-sudoku gnome-mahjongg gnome-screensaver rhythmbox example-content telepathy aisleriot account-plugin-* brltty duplicity empathy thunderbird
+apt-get purge -y whoopsie cups bluez modemmanager unattended-upgrades deja-dup libreoffice-* gnome-mines gnome-sudoku gnome-mahjongg gnome-screensaver rhythmbox example-content aisleriot account-plugin-* brltty duplicity empathy thunderbird
 apt-get autoremove -y
 apt-get install -y git tcpdump lsof mlocate v4l-utils usbutils tree
 apt-get update
