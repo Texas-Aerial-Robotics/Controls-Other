@@ -27,3 +27,8 @@
 ### timesync.bat 
 - Basically just restarts the Windows timekeeping service twice and asks to resync from Internet Time. This is used to keep clocks happy when dualbooting Windows and Linux. **You must have internet access before running this script.** 
 - I had this script in my startup folder `C:\Users\**Username**\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup` (easily accessible by opening "Run" and typing `shell:startup`). Then I had a shortcut to the script on my Desktop in case my internet didn't connect in time and I needed to run it again. 
+
+
+### gitpull.sh 
+- pulls the latest version of a git repo. 
+- assumes to be run from catkin_ws/src
