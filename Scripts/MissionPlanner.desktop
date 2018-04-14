@@ -1,0 +1,15 @@
+[Desktop Entry]
+Comment=MissionPlanner using Mono
+Terminal=false
+Name=MissionPlanner
+Exec=gksu mono /home/<username>/MissionPlanner/MissionPlanner.exe
+Type=Application
+Icon=/home/<username>/MissionPlanner/mpdesktop150.png
+
+
+# NOTES:
+# Install Mono from website
+# Grab ZIP of MissionPlanner
+# Extract ZIP to ~/MissionPlanner
+# cp this file to ~/.local/share/applications/MissionPlanner.desktop
+# change <username> to the computer's username
