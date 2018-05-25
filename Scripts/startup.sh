@@ -1,5 +1,7 @@
 export DISPLAY=:0
 
+sudo chmod 777 /dev/ttyS0
+
 roscore &
 
 sleep 3
@@ -7,8 +9,6 @@ sleep 3
 roslaunch mavros apm.launch fcu_url:="/dev/ttyS0:921600" &
 
 sleep 3
-
-sudo chmod 777 /dev/ttyS0
 
 rosrun mavros mavsys rate --all 10 &&
 
