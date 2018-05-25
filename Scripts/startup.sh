@@ -32,5 +32,5 @@ sleep 1
 
 rosrun stratnode lin_reg >> lin_reg.log &
 
-
+rostopic echo /mavros/setpoint_position/local >> waypoint.log &
 
