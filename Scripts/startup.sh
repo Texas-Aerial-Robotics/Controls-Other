@@ -20,7 +20,7 @@ roslaunch darknet_ros darknet_ros.launch &
 
 sleep 5
 
-roslaunch transformations_ros transformations.launch &
+rosrun transformations_ros simpleTransform &
 
 sleep 1
 
