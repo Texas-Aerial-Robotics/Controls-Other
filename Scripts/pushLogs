@@ -2,8 +2,8 @@
 
 #made by Eric Johnson
 
-{
-logDir=/home/eric/logs
+#{
+logDir=/sdCard/Logs
 cd $logDir
 echo "adding changes..."
 echo
@@ -19,9 +19,10 @@ git push 2>&1
 echo
 echo "removing logs..."
 echo
-rm log*
+rm *.log
+rm *.avi
 echo
 echo "done."
 echo
-} >> /home/eric/gitTest.log
+#} >> /sdCard/Logs/logPusher.log
 
