@@ -15,7 +15,7 @@ chmod 666 /dev/ttyS0
 
 # Mess with packages 
 apt-get update
-apt-get purge -y whoopsie cups bluez modemmanager unattended-upgrades deja-dup libreoffice-* gnome-mines gnome-sudoku gnome-mahjongg gnome-screensaver rhythmbox example-content aisleriot account-plugin-* brltty duplicity empathy thunderbird
+apt-get purge -y whoopsie cups bluez modemmanager unattended-upgrades deja-dup printer-driver-* libreoffice-* gnome-mines gnome-sudoku gnome-mahjongg gnome-screensaver rhythmbox example-content aisleriot account-plugin-* brltty duplicity empathy thunderbird
 apt-get autoremove -y
 apt-get install -y git tcpdump lsof mlocate v4l-utils usbutils tree
 apt-get update
@@ -30,7 +30,3 @@ updatedb
 sed -i s/'rotate 4'/'rotate 1'/g /etc/logrotate.conf   # keep 1 week of backups
 sed -i s/#compress/compress/g /etc/logrotate.conf   # compress backups
 perl -pe 's/ console=ttyS0,115200//' -i /boot/extlinux/extlinux.conf
-
-wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
-chmod a+x install_geographiclib_datasets.sh
-./install_geographiclib_datasets.sh
