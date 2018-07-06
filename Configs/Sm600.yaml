@@ -1,0 +1,45 @@
+description: >
+  PengFei Model RC Simulator - XTR+G2+FMS Controller. 4 axes
+  usable.
+match:
+  - 'Sm600'
+  - 'PengFei Model RC Simulator - XTR+G2+FMS Controller'
+  - 'PengFei Model RC Simulator'
+  - 'XTR+G2+FMS Controller'
+controls:
+  - channel: 1 # roll
+    type: axis
+    id: 3
+  - channel: 2 # pitch
+    type: axis
+    id: 0
+  - channel: 3 # throttle
+    type: axis
+    id: 1
+  - channel: 4 # yaw
+    type: axis
+    id: 4
+
+# From mavproxy_joystick.py:
+#
+#    'GREAT PLANES InterLink Elite':
+#    # 4 axes usable
+#    [(0, 500,  1500),
+#     (1, 500,  1500),
+#     (2, -1000, 1500),
+#     (4, 500,  1500),
+#     None,
+#     None,
+#     None,
+#     (3, 500,  1500)],
+#
+#    'Great Planes GP Controller':
+#    # 4 axes usable
+#    [(0, 500,  1500),
+#     (1, -500,  1500),
+#     (2, -1000, 1500),
+#     (4, -500,  1500),
+#     None,
+#     None,
+#     None,
+#     (3, 500,  1500)],
