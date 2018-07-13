@@ -14,23 +14,23 @@ rosrun mavros mavsys rate --all 10 &&
 
 rosrun flight_pkg setHome
 
-roslaunch video_stream_opencv webcam.launch &
+roslaunch video_stream_opencv droneMultipleCams.launch &
 
-sleep 3
+roslaunch camera_signalman drone.launch &
+
+sleep 2
 
 roslaunch darknet_ros darknet_ros.launch &
 
 sleep 5
 
-rosrun transformations_ros simpleTransform >> simpleTransform.log &
+roslaunch transformations_ros  transformations.launch &
 
 sleep 1
 
-roslaunch flight_pkg follow.launch >> follow.log &
+roslaunch flight_pkg followScan.launch &
 
 sleep 1
 
-rosrun stratnode lin_reg >> lin_reg.log &
-
-rostopic echo /mavros/setpoint_position/local >> waypoint.log &
+rosrun stratnode stratnode &
 
