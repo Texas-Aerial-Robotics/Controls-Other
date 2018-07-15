@@ -38,7 +38,7 @@ echo -n " " >> lastRunProcIds
 
 sleep 5
 
-roslaunch transformations_ros  transformations.launch &
+roslaunch transformations_ros  transformations.launch >> transformations.log &
 echo -n $! >> lastRunProcIds
 echo -n " " >> lastRunProcIds
 
