@@ -1,3 +1,3 @@
-#! /bin/bash 
-kill $(cat lastRunProcIds)
+#! /bin/bash
+kill $(cat ~/lastRunProcIds)
 

@@ -13,6 +13,6 @@ gnome-terminal \
 	--tab -e "rosrun flight_pkg setHome" \
 	--tab -e "roslaunch transformations_ros transformations.launch" \
 	--tab -e "roslaunch flight_pkg followScan.launch" \
-	--tab -e "rosrun stratnode stratnode" \
+	--tab -e "rosrun stratnode stratnode" 
 
 	# --tab -e "roslaunch roomba_control roombaStart.launch"
