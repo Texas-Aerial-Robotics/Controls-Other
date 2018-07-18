@@ -28,9 +28,9 @@ rosrun mavros mavsys rate --all 10 &&
 echo -n $! >> ~/lastRunProcIds
 echo -n " " >> ~/lastRunProcIds
 
-rosrun flight_pkg setHome
+rosrun flight_pkg setHome >> ~/TAR_logs/$current_date_time/controls.log
 
-echo "" > ~/TAR_logs/$current_date_time/video_stream_opencv.log
+echo "------------------" >> ~/TAR_logs/$current_date_time/controls.log
 roslaunch video_stream_opencv droneMultipleCams.launch | sed 's/[\x01-\x1F\x7F]//g' | sed 's/\[0m//g' >> ~/TAR_logs/$current_date_time/video_stream_opencv.log &
 echo -n $! >> ~/lastRunProcIds
 echo -n " " >> ~/lastRunProcIds
@@ -41,28 +41,29 @@ echo -n " " >> ~/lastRunProcIds
 
 sleep 2
 
-echo "" > ~/TAR_logs/$current_date_time/darknet.log
 roslaunch darknet_ros darknet_ros.launch | sed 's/[\x01-\x1F\x7F]//g' | sed 's/\[0m//g' >> ~/TAR_logs/$current_date_time/darknet.log &
 echo -n $! >> ~/lastRunProcIds
 echo -n " " >> ~/lastRunProcIds
 
 sleep 5
 
-echo "" > ~/TAR_logs/$current_date_time/transformations.log
 roslaunch transformations_ros transformations.launch | sed 's/[\x01-\x1F\x7F]//g' | sed 's/\[0m//g' >> ~/TAR_logs/$current_date_time/transformations.log &
 echo -n $! >> ~/lastRunProcIds
 echo -n " " >> ~/lastRunProcIds
 
 sleep 1
 
-echo "" > ~/TAR_logs/$current_date_time/controls.log
 roslaunch flight_pkg followScan.launch | sed 's/[\x01-\x1F\x7F]//g' | sed 's/\[0m//g' >> ~/TAR_logs/$current_date_time/controls.log &
 echo -n $! >> ~/lastRunProcIds
 echo -n " " >> ~/lastRunProcIds
 
 sleep 1
 
-echo "" > ~/TAR_logs/$current_date_time/stratnode.log
 rosrun stratnode stratnode >> ~/TAR_logs/$current_date_time/stratnode.log &
 echo -n $! >> ~/lastRunProcIds
 echo -n " " >> ~/lastRunProcIds
+
+roslaunch video_writer video_writer.launch input_topic:=/darknet_ros/detection_image output_file:=/home/ubuntu/TAR_logs/latest/detections.avi
+echo -n $! >> ~/lastRunProcIds
+echo -n " " >> ~/lastRunProcIds
+
