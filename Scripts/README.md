@@ -19,6 +19,7 @@
 ### startup.sh 
 - Starts the required tools (`roscore` and `roslaunch`) for running our flight code 
 - Starts up our flight package 
+- For Jetson, add to `.bashrc` for inflight console: `multitail -s 2 --retry-all --no-repeat -ci green controls.log -ci yellow darknet.log -ci blue stratnode.log transformations.log -ci cyan video_stream_opencv.log`
 
 ### temp 
 - Shows the temperature of the CPU in Celcius and Farenheit 
