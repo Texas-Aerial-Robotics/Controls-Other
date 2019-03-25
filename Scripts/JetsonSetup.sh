@@ -29,4 +29,4 @@ updatedb
 
 sed -i s/'rotate 4'/'rotate 1'/g /etc/logrotate.conf   # keep 1 week of backups
 sed -i s/#compress/compress/g /etc/logrotate.conf   # compress backups
-perl -pe 's/ console=ttyS0,115200//' -i /boot/extlinux/extlinux.conf
+#perl -pe 's/ console=ttyS0,115200//' -i /boot/extlinux/extlinux.conf #don't know if this is still needed
